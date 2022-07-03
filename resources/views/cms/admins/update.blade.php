@@ -1,9 +1,9 @@
 @extends('cms.parent');
 
 
-@section('page-name','nas');
-@section('main-page','nasser');
-@section('sub-page','naa');
+@section('page-name','motaz');
+@section('main-page','3ez');
+@section('sub-page','zez');
 @section('page-name-small','Update');
 
 @section('styles')

@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-3 col-form-label">Email address:<span class="text-danger">*</span></label>
+                        <label class="col-3 col-form-label">Email Email:<span class="text-danger">*</span></label>
                         <div class="col-9">
                             <input type="email" class="form-control" id="email" placeholder="Enter email" />
                             <span class="form-text text-muted">We'll never share your email with anyone else</span>
@@ -71,6 +71,27 @@
                         <div class="col-9">
                             <input type="text" class="form-control" id="address" placeholder="Enter full Address" />
                             <span class="form-text text-muted">Please enter your full Address</span>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4">
+                        <label class="col-3 col-form-label">Complaint:<span class="text-danger">*</span></label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" id="complaint" placeholder="Enter complaint" />
+                            <span class="form-text text-muted">Please enter your complaint</span>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4">
+                        <label class="col-3 col-form-label">Chronic Diseases:<span class="text-danger">*</span></label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" id="chronic_diseaes" placeholder="Enter chronic diseases" />
+                            <span class="form-text text-muted">Please enter your chronic diseases</span>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4">
+                        <label class="col-3 col-form-label">Previous Operations:<span class="text-danger">*</span></label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" id="previous_operations" placeholder="Enter previous operations" />
+                            <span class="form-text text-muted">Please enter your previous operations</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
@@ -122,6 +143,10 @@
             phone_num: document.getElementById('phone_num').value,
             email: document.getElementById('email').value,
             address: document.getElementById('address').value,
+            identification_num: document.getElementById('identification_num').value,
+            complaint: document.getElementById('complaint').value,
+            chronic_diseaes: document.getElementById('chronic_diseaes').value,
+            previous_operations: document.getElementById('previous_operations').value,
             identification_num: document.getElementById('identification_num').value,
         })
         .then(function (response) {

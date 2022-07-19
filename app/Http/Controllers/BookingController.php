@@ -10,6 +10,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BookingController extends Controller
 {
+
+    private function getGuardName(): String
+    {
+        return auth('admin')->check() ? 'admin' : 'doctor';
+    }
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +25,33 @@ class BookingController extends Controller
     public function index()
     {
         //
+        // dd(Auth()->id());
+        $patient = auth('patient')->check() ? 'patient' : 'doctor';
+        $employee = auth('employee')->check() ? 'employee' : 'doctor';
+        // dd($patient);
+        $user = $this->getGuardName();
+
         $data = Booking::all();
+        if ($user =='admin') {
+            $data = Booking::all();
+        }
+        if ($user == 'doctor') {
+            
+            $data = Booking::where('doctor_id','=', Auth()->id())->get();
+        }
+        if ($employee =='employee') {
+            $data = Booking::all();
+        }
+        
+        if ($patient == 'patient'){
+            $data = Booking::where('patient_id','=', Auth()->id())->get(); 
+            // dd($user);
+        }
+        // dd($user);
+
+
+
+        // dd($user);
         return response()->view('cms.bookings.index',['bookings'=>$data]);
     }
 
@@ -55,6 +88,7 @@ class BookingController extends Controller
             $booking = new Booking();
             $booking->doctor_id = $request->input('doctor_id');
             $booking->patient_id = $request->input('patient_id');
+            $booking->treatment = '';
             $booking->booking_date = $request->input('booking_date');
             $booking->booking = $request->input('booking');
             $isSaved = $booking->save();
@@ -110,6 +144,7 @@ class BookingController extends Controller
             'doctor_id' => 'required|integer',
             'patient_id' => 'required|integer',
             'booking_date' => 'required|date',
+            'treatment' => 'required|string',
             'booking' => 'required|boolean',
             
         ]);
@@ -117,6 +152,7 @@ class BookingController extends Controller
             $booking->doctor_id = $request->input('doctor_id');
             $booking->patient_id = $request->input('patient_id');
             $booking->booking_date = $request->input('booking_date');
+            $booking->treatment = $request->input('treatment');
             $booking->booking = $request->input('booking');
             $isUpdateed = $booking->save();
             return response()->json([

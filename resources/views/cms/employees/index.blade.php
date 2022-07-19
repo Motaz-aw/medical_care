@@ -1,26 +1,28 @@
-@extends('cms.parent')
-@section('title','Patients view')
-@section('page-name','All patients')
-@section('main-page','Human Resources')
-@section('sub-page','patients')
-@section('page-name-small','All patients')
+@extends('cms.parent');
+
+@section('title','View employees')
+@section('page-name','nas');
+@section('main-page','nasser');
+@section('sub-page','naa');
+@section('page-name-small','create');
 
 @section('styles')
-
+    
 @endsection
 
 @section('content')
+
 <!--begin::Advance Table Widget 5-->
 <div class="card card-custom gutter-b">
     <!--begin::Header-->
     <div class="card-header border-0 py-5">
         <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">patients</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">Manage system patients</span>
+            <span class="card-label font-weight-bolder text-dark">employees</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">Manage system employees</span>
         </h3>
         <div class="card-toolbar">
-            @can('Create-patient')
-            <a href="{{route('patients.create')}}" class="btn btn-info font-weight-bolder font-size-sm">New patient</a>
+            @can('Create-employee')
+            <a href="{{route('employees.create')}}" class="btn btn-info font-weight-bolder font-size-sm">New employee</a>
             @endcan
         </div>
     </div>
@@ -28,66 +30,49 @@
     <!--begin::Body-->
     <div class="card-body py-0">
         <!--begin::Table-->
-        <div class="table-responsive">
-            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_2">
+        <div class="table-responsive m-5">
+            <table class="table table-head-custom table-vertical-center " id="kt_advance_table_widget_2">
                 <thead>
                     <tr class="text-uppercase">
-                        <th style="min-width: 120px">Name</th>
-                        {{-- <th style="min-width: 150px">Membershipe Name</th> --}}
-                        <th style="min-width: 150px">Phone num</th>
-                        <th style="min-width: 150px">Email</th>
-                        <th style="min-width: 150px">Address</th>
-                        <th style="min-width: 150px">Complaint</th>
-                        <th style="min-width: 150px">Chronic diseases</th>
-                        <th style="min-width: 150px">Previous operations</th>
-                        <th style="min-width: 180px">Identification num</th>
+                        <th class="pl-0" style="min-width: 100px">id</th>
+                        <th style="min-width: 120px">name</th>
+                        <th style="min-width: 150px">phone_num</th>
+                        <th style="min-width: 150px">email</th>
+                        <th style="min-width: 150px">address</th>
+                        <th style="min-width: 130px">identification_num</th>
                         <th class="pr-0 text-right" style="min-width: 160px">action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($patients as $patient)
+                    @foreach ($employees as $employee)
                     <tr>
                         <td class="pl-0">
-                            <span
-                                class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$patient->name}}</span>
-                            {{-- <span class="text-muted font-weight-bold"></span> --}}
+                            <a href="#"
+                                class="text-dark-75 font-weight-bolder text-hover-primary font-size-lg">{{$employee->id}}</a>
                         </td>
-                        {{-- <td class="pl-0">
-                            <span
-                                class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$patient->Memberships->username}}</span>
+                        <td class="pl-0">
+                            <a href="#"
+                                class="text-dark-75 font-weight-bolder text-hover-primary font-size-lg">{{$employee->name}}</a>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$employee->phone_num}}</span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$employee->email}}</span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$employee->address}}</span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$employee->identification_num}}</span>
+                        </td>
+                        {{-- <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$employee->roles->name}}</span>
                         </td> --}}
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$patient->phone_num}}</span>
-                            
-                        </td>
-                        <td>
-                            <span
-                                class="text-dark-50 font-weight-bolder d-block font-size-lg">{{$patient->email}}</span>
-                        </td>
-                        <td>
-                            <span
-                                class="text-dark-50 font-weight-bolder d-block font-size-lg">{{$patient->address}}</span>
-                        </td>
-                        <td>
-                            <span
-                                class="text-dark-50 font-weight-bolder d-block font-size-lg">{{$patient->complaint}}</span>
-                        </td>
-                        <td>
-                            <span
-                                class="text-dark-50 font-weight-bolder d-block font-size-lg">{{$patient->chronic_diseaes}}</span>
-                        </td>
-                        <td>
-                            <span
-                                class="text-dark-50 font-weight-bolder d-block font-size-lg">{{$patient->previous_operations}}</span>
-                        </td>
-                        <td>
-                            <span
-                                class="text-dark-50 font-weight-bolder d-block font-size-lg">{{$patient->identification_num}}</span>
-                        </td>
-                        
+    
                         <td class="pr-0 text-right">
-                            {{-- @if (auth('patient')->user()->id != $patient->id) --}}
-                                
+                            {{-- @if (auth('employee')->user()->id != $employee->id) --}}
+                             
                             <a href="#" class="btn btn-icon btn-light btn-hover-primary btn-sm">
                                 <span class="svg-icon svg-icon-primary svg-icon-2x">
                                     <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Code\Lock-overturning.svg--><svg
@@ -106,8 +91,8 @@
                                     <!--end::Svg Icon-->
                                 </span>
                             </a>
-                            {{-- @can('Update-Admin') --}}
-                            <a href="{{route('patients.edit',$patient->id)}}"
+                            {{-- @can('Update-employee') --}}
+                            <a href="{{route('employees.edit',$employee->id)}}"
                                 class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                                 <span class="svg-icon svg-icon-md svg-icon-primary">
                                     <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg-->
@@ -128,8 +113,8 @@
                                 </span>
                             </a>
                             {{-- @endcan --}}
-                            {{-- @can('Delete-Admin') --}}
-                            <a href="#" onclick="performDestroy('{{$patient->id}}',this)"
+                            {{-- @can('Delete-employee') --}}
+                            <a href="#" onclick="performDestroy('{{$employee->id}}',this)"
                                 class="btn btn-icon btn-light btn-hover-primary btn-sm">
                                 <span class="svg-icon svg-icon-md svg-icon-primary">
                                     <!--begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg-->
@@ -148,9 +133,7 @@
                                     <!--end::Svg Icon-->
                                 </span>
                             </a>
-
                             {{-- @endcan --}}
-
                             {{-- @endif --}}
                         </td>
                     </tr>
@@ -162,13 +145,30 @@
     <!--end::Body-->
 </div>
 <!--end::Advance Table Widget 5-->
-
+    
 @endsection
 
 @section('scripts')
-<script src="{{asset('assets/js/pages/widgets.js')}}"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> --}}
+
+
 <script>
-function performDestroy(id, ref){
+    // function performDestroy(id, ref){
+    //     axios.delete('/cms/employee/employees/'+id)
+    //         .then(function (response) {
+    //             // handle success
+    //             console.log(response);
+    //             ref.closest('tr').remove();
+    //     toastr.success(response.data.message);
+    //         })
+    //         .catch(function (error) {
+    //             // handle error
+    //             console.log(error);
+    //     toastr.error(error.response.data.message);
+    //         })
+    //  }
+
+    function performDestroy(id, ref){
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -186,7 +186,7 @@ function performDestroy(id, ref){
 
      function destroy(id, ref) {
          //JS - Axios
-        axios.delete('/cms/admin/patients/'+id)
+        axios.delete('/cms/admin/employees/'+id)
             .then(function (response) {
                 // handle success
                 console.log(response);
@@ -209,4 +209,5 @@ function performDestroy(id, ref){
         });
      }
 </script>
+    
 @endsection

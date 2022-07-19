@@ -1,12 +1,13 @@
-@extends('cms.parent')
+@extends('cms.parent');
 
-@section('page-name','Edit patient')
-@section('main-page','Human Resources')
-@section('sub-page','patients')
-@section('page-name-small','Edit patient')
+
+@section('page-name','nas');
+@section('main-page','nasser');
+@section('sub-page','naa');
+@section('page-name-small','Update');
 
 @section('styles')
-
+    
 @endsection
 
 @section('content')
@@ -17,7 +18,7 @@
         <!--begin::Card-->
         <div class="card card-custom gutter-b example example-compact">
             <div class="card-header">
-                <h3 class="card-title">Update New patient</h3>
+                <h3 class="card-title">Update New employee</h3>
                 {{-- <div class="card-toolbar">
                         <div class="example-tools justify-content-center">
                             <span class="example-toggle" data-toggle="tooltip" title="View code"></span>
@@ -37,7 +38,7 @@
                                 <select class="form-control selectpicker" data-size="7" id="role_id"
                                     title="Choose one of the following..." tabindex="null" data-live-search="true">
                                     @foreach ($roles as $role)
-                                    <option value="{{$role->id}}" @if ($patientRole->id == $role->id) selected 
+                                    <option value="{{$role->id}}" @if ($employeeRole->id == $role->id) selected 
                                     @endif>{{$role->name}}</option>
                                     @endforeach
                                 </select>
@@ -51,56 +52,35 @@
                     <div class="form-group row mt-4">
                         <label class="col-3 col-form-label">Full Name:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="text" class="form-control" id="name" value="{{$patient->name}}" placeholder="Enter full name" />
+                            <input type="text" class="form-control" id="name" value="{{$employee->name}}" placeholder="Enter full name" />
                             <span class="form-text text-muted">Please enter your full name</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <label class="col-3 col-form-label">Mobile:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="tel" class="form-control" id="phone_num" value="{{$patient->phone_num}}" placeholder="Enter mobile" />
+                            <input type="tel" class="form-control" id="phone_num" value="{{$employee->phone_num}}" placeholder="Enter mobile" />
                             <span class="form-text text-muted">Please enter your mobile number</span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-3 col-form-label">Email address:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="email" class="form-control" id="email" value="{{$patient->email}}" placeholder="Enter email" />
+                            <input type="email" class="form-control" id="email" value="{{$employee->email}}" placeholder="Enter email" />
                             <span class="form-text text-muted">We'll never share your email with anyone else</span>
-                        </div>
-                    </div>
-                    <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Complaint:<span class="text-danger">*</span></label>
-                        <div class="col-9">
-                            <input type="text" class="form-control" id="complaint" value="{{$patient->complaint}}"/>
-                            <span class="form-text text-muted">Please enter your complaint</span>
-                        </div>
-                    </div>
-                    <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Chronic Diseases:<span class="text-danger">*</span></label>
-                        <div class="col-9">
-                            <input type="text" class="form-control" id="chronic_diseaes" value="{{$patient->chronic_diseaes}}"/>
-                            <span class="form-text text-muted">Please enter your chronic diseases</span>
-                        </div>
-                    </div>
-                    <div class="form-group row mt-4">
-                        <label class="col-3 col-form-label">Previous Operations:<span class="text-danger">*</span></label>
-                        <div class="col-9">
-                            <input type="text" class="form-control" id="previous_operations" value="{{$patient->previous_operations}}"/>
-                            <span class="form-text text-muted">Please enter your previous operations</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <label class="col-3 col-form-label">Full Name:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="text" class="form-control" id="address" value="{{$patient->address}}" placeholder="Enter full name" />
+                            <input type="text" class="form-control" id="address" value="{{$employee->address}}" placeholder="Enter full name" />
                             <span class="form-text text-muted">Please enter your full name</span>
                         </div>
                     </div>
                     <div class="form-group row mt-4">
                         <label class="col-3 col-form-label">Full Name:<span class="text-danger">*</span></label>
                         <div class="col-9">
-                            <input type="text" class="form-control" id="identification_num" value="{{$patient->identification_num}}" placeholder="Enter full name" />
+                            <input type="text" class="form-control" id="identification_num" value="{{$employee->identification_num}}" placeholder="Enter full name" />
                             <span class="form-text text-muted">Please enter your full name</span>
                         </div>
                     </div>
@@ -109,20 +89,20 @@
                         <div class="col-3">
                             <span class="switch switch-outline switch-icon switch-success">
                                 <label>
-                                    <input type="checkbox" id="status" @if($patient->status) checked @endif>
+                                    <input type="checkbox" checked="checked" id="active">
                                     <span></span>
                                 </label>
                             </span>
                         </div>
-                    </div>
-                </div> --}}
+                    </div> --}}
+                </div>
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-3">
 
                         </div>
                         <div class="col-9">
-                            <button type="button" onclick="Updat({{$patient->id}})" class="btn btn-primary mr-2">Submit</button>
+                            <button type="button" onclick="Updat({{$employee->id}})" class="btn btn-primary mr-2">Submit</button>
                             <button type="reset" class="btn btn-secondary">Cancel</button>
                         </div>
                     </div>
@@ -134,22 +114,19 @@
     </div>
 </div>
 <!--end::Container-->
-
-
+    
 @endsection
 
 @section('scripts')
+
 <script>
-    function Updat(id){
-    axios.put('/cms/admin/patients/'+id, {
+function Updat(id){
+    axios.put('/cms/admin/employees/'+id, {
         role_id: document.getElementById('role_id').value,
         name: document.getElementById('name').value,
         phone_num: document.getElementById('phone_num').value,
         email: document.getElementById('email').value,
         address: document.getElementById('address').value,
-            complaint: document.getElementById('complaint').value,
-            chronic_diseaes: document.getElementById('chronic_diseaes').value,
-            previous_operations: document.getElementById('previous_operations').value,
         identification_num: document.getElementById('identification_num').value,
     })
     .then(function (response) {
@@ -161,6 +138,6 @@
         toastr.error(error.response.data.message);
     });
 }
-    
 </script>
+    
 @endsection

@@ -1,9 +1,9 @@
 @extends('cms.parent');
 
 @section('title','View employees')
-@section('page-name','nas');
-@section('main-page','nasser');
-@section('sub-page','naa');
+@section('page-name','employees');
+@section('main-page','View employees');
+@section('sub-page','list');
 @section('page-name-small','create');
 
 @section('styles')

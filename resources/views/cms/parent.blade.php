@@ -218,7 +218,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														<i class="menu-bullet menu-bullet-dot">
 															<span></span>
 														</i>
-														<span class="menu-text">Index</span>
+														<span class="menu-text">List</span>
 													</a>
 												</li>
 												@endcan
@@ -278,7 +278,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<i class="menu-bullet menu-bullet-dot">
 																<span></span>
 															</i>
-															<span class="menu-text">Index</span>
+															<span class="menu-text">List</span>
 														</a>
 													</li>
 												@endcan
@@ -339,7 +339,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														<i class="menu-bullet menu-bullet-dot">
 															<span></span>
 														</i>
-														<span class="menu-text">Index</span>
+														<span class="menu-text">List</span>
 													</a>
 												</li>
 												@endcan
@@ -398,7 +398,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<i class="menu-bullet menu-bullet-dot">
 																<span></span>
 															</i>
-															<span class="menu-text">Index</span>
+															<span class="menu-text">List</span>
 														</a>
 													</li>
 												@endcan
@@ -468,7 +468,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<i class="menu-bullet menu-bullet-dot">
 																<span></span>
 															</i>
-															<span class="menu-text">Index</span>
+															<span class="menu-text">List</span>
 														</a>
 													</li>
 												@endcan
@@ -527,7 +527,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<i class="menu-bullet menu-bullet-dot">
 																<span></span>
 															</i>
-															<span class="menu-text">Index</span>
+															<span class="menu-text">List</span>
 														</a>
 													</li>
 												@endcan
@@ -594,7 +594,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														<i class="menu-bullet menu-bullet-dot">
 															<span></span>
 														</i>
-														<span class="menu-text">Index</span>
+														<span class="menu-text">List</span>
 													</a>
 												</li>
 											@endcan
@@ -654,7 +654,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														<i class="menu-bullet menu-bullet-dot">
 															<span></span>
 														</i>
-														<span class="menu-text">Index</span>
+														<span class="menu-text">List</span>
 													</a>
 												</li>
 											@endcan

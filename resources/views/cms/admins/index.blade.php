@@ -1,9 +1,9 @@
 @extends('cms.parent');
 
 @section('title','View Admins')
-@section('page-name','motaz');
-@section('main-page','3ez');
-@section('sub-page','zez');
+@section('page-name','Admins');
+@section('main-page','Admins view');
+@section('sub-page','list');
 @section('page-name-small','create');
 
 @section('styles')

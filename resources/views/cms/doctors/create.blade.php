@@ -71,9 +71,9 @@
                             <div class="dropdown bootstrap-select form-control dropup">
                                 <select class="form-control selectpicker" data-size="7" id="Bachelors_degree"
                                     title="-- --" tabindex="null" data-live-search="true">
-                                    <option value="bakaluryus">Bakaluryus</option>
-                                    <option value="Master's">Master's</option>
-                                    <option value="dukturah">Dukturah</option>
+                                    <option value="Bakaloria degree">Bakaloria degree</option>
+                                    <option value="Master degree">Master degree</option>
+                                    <option value="Ph.D">Ph.D</option>
                                 </select>
                             </div>
                             <span class="form-text text-muted">Please enter your Bachelors degree</span>
@@ -86,9 +86,14 @@
                             <div class="dropdown bootstrap-select form-control dropup">
                                 <select class="form-control selectpicker" data-size="7" id="specialty"
                                     title="-- --" tabindex="null" data-live-search="true">
-                                    <option value="bones">bones</option>
-                                    <option value="batina">batina</option>
-                                    <option value="surgery">surgery</option>
+                                    <option value="Otolaryngology">Otolaryngology </option>
+                                    <option value="Physical therapy">Physical therapy</option>
+                                    <option value="General Surgery">General Surgery</option>
+
+
+                                    <option value="General Neurologists">General Neurologists</option>
+                                    <option value="Therapist">Therapist</option>
+                                    <option value="Anesthesia,resuscitation">Anesthesia,resuscitation</option>
                                 </select>
                             </div>
                             <span class="form-text text-muted">Please enter your specialty</span>

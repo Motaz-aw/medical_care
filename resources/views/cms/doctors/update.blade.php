@@ -72,9 +72,9 @@
                             <div class="dropdown bootstrap-select form-control dropup">
                                 <select class="form-control selectpicker" data-size="7" id="Bachelors_degree"  value="{{$doctor->Bachelors_degree}}"
                                      tabindex="null" data-live-search="true">
-                                    <option value="bakaluryus" @if($role->guard_name == 'bakaluryus') selected @endif>Bakaluryus</option>
-                                    <option value="master's" @if($role->guard_name == 'master s') selected @endif>Master's</option>
-                                    <option value="dukturah" @if($role->guard_name == 'dukturah') selected @endif>Dukturah</option>
+                                    <option value="Bakaloria degree" @if($role->guard_name == 'Bakaloria degree') selected @endif>Bakaloria degree</option>
+                                    <option value="Master degree" @if($role->guard_name == 'master s') selected @endif>Master degree</option>
+                                    <option value="Ph.D" @if($role->guard_name == 'Ph.D') selected @endif>Ph.D</option>
                                 </select>
                             </div>
                             <span class="form-text text-muted">Please enter your Bachelors degree</span>
@@ -87,9 +87,13 @@
                             <div class="dropdown bootstrap-select form-control dropup">
                                 <select class="form-control selectpicker" data-size="7" id="specialty"  value="{{$doctor->specialty}}"
                                      tabindex="null" data-live-search="true">
-                                    <option value="bones"  @if($role->guard_name == 'bones') selected @endif>bones</option>
-                                    <option value="batina" @if($role->guard_name == 'batina') selected @endif>batina</option>
-                                    <option value="surgery" @if($role->guard_name == 'surgery') selected @endif>surgery</option>
+                                    <option value="Otolaryngology"  @if($role->guard_name == 'Otolaryngology') selected @endif>Otolaryngology</option>
+                                    <option value="Physical therapy" @if($role->guard_name == 'Physical therapy') selected @endif>Physical therapy</option>
+                                    <option value="General Surgery" @if($role->guard_name == 'General Surgery') selected @endif>General Surgery</option>
+
+                                    <option value="General Neurologists" @if($role->guard_name == 'General Neurologists') selected @endif>General Neurologists</option>
+                                    <option value="Therapist" @if($role->guard_name == 'Therapist') selected @endif>Therapist</option>
+                                    <option value="Anesthesia,resuscitation" @if($role->guard_name == 'Anesthesia,resuscitation') selected @endif>Anesthesia,resuscitation</option>
                                 </select>
                             </div>
                             <span class="form-text text-muted">Please enter your specialty</span>

@@ -104,7 +104,7 @@
                         <label class="col-3 col-form-label">clinic name:<span class="text-danger">*</span></label>
                         <div class="col-9">
                             <select class="form-control selectpicker" data-size="7" id="clinic_id" 
-                            title="Choose one of the following..." tabindex="null" data-live-search="true">
+                            tabindex="null" data-live-search="true">
                            @foreach($clinics as $clinic)
                             <option value="{{$clinic->id}}">{{$clinic->name}}</option>
                             @endforeach
@@ -170,7 +170,7 @@ function performStore(id) {
         if(document.getElementById('Certificate_of_good_conduct').files[0] != undefined){
             formData.append('Certificate_of_good_conduct', document.getElementById('Certificate_of_good_conduct').files[0])
         }
-        axios.post('/cms/admin/doctors'+id, formData).then(function (response) {
+        axios.post('/cms/admin/doctors/'+id, formData).then(function (response) {
             // handle success
             console.log(response);
             toastr.success(response.data.message);

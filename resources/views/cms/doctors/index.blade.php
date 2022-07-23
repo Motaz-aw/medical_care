@@ -38,7 +38,7 @@
                         <th style="min-width: 150px">email</th>
                         <th style="min-width: 150px">Bachelors_degree</th>
                         <th style="min-width: 150px">specialty</th>
-                        <th style="min-width: 150px">clinic_id</th>
+                        <th style="min-width: 150px">clinic name/th>
                         <th style="min-width: 150px">practice_certificate</th>
                         <th style="min-width: 130px">Certificate_of_good_conduct</th>
                         <th class="pr-0 text-right" style="min-width: 160px">action</th>
@@ -62,7 +62,7 @@
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$doctor->specialty}}</span>
                         </td>
                         <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$doctor->clinic_id}}</span>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{$doctor->clinic->name}}</span>
                         </td>
                         <td>
                             <img class="img-circle img-bordered-sm" width="65" height="65"

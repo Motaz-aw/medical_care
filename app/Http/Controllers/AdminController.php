@@ -117,10 +117,10 @@ class AdminController extends Controller
         $validator = validator($request->all(),[
             'role_id' => 'required|integer|exists:roles,id',
             'name'=>'required|string|min:3|max:100',
-            'phone_num'=>'required|string|min:3|max:45|unique:admins,phone_num',
+            'phone_num'=>'required|string|min:3|max:45',
             'email'=>'required|string|email|unique:admins,email, '. $admin->id,
             'address'=>'required|string|min:3|max:100',
-            'identification_num'=>'required|string|min:3|max:45|unique:admins,identification_num',
+            'identification_num'=>'required|string|min:3|max:45',
         ]);
 
         if(!$validator->fails()){
